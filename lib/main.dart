@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
-  Get.put(CartController());
 }
 
 class MyApp extends StatelessWidget {

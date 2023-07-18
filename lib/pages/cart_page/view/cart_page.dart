@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ionicons/ionicons.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -24,7 +23,7 @@ class CartPage extends StatelessWidget {
                 Get.back();
               },
               icon: const Icon(
-                Ionicons.chevron_back,
+                Icons.arrow_back_ios_new,
                 color: Colors.black,
               ),
             ),

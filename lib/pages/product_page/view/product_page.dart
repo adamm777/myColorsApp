@@ -1,19 +1,22 @@
 import 'package:district_flutter/model/product_model.dart';
 import 'package:district_flutter/pages/cart_page/view/cart_page.dart';
 import 'package:district_flutter/pages/product_page/controller/product_controller.dart';
-import 'package:district_flutter/pages/product_page/view/product_details.dart';
+
 import 'package:district_flutter/widgets/product_cart.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:ionicons/ionicons.dart';
+
+import '../../cart_page/controller/cart_controller.dart';
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Get.put(CartController());
     return GetBuilder<ProductController>(
       init: ProductController(),
       builder: (controller) {
@@ -35,7 +38,7 @@ class ProductsPage extends StatelessWidget {
                       child: SizedBox(
                         height: 70,
                         child: Image.asset(
-                          "assets/logo.jpg",
+                          "assets/2.jpg",
                           fit: BoxFit.contain,
                         ),
                       ),
