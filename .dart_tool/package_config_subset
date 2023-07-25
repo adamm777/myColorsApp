@@ -70,10 +70,6 @@ fluttertoast
 2.12
 file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/fluttertoast-8.2.2/
 file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/fluttertoast-8.2.2/lib/
-get
-2.15
-file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.5/
-file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.5/lib/
 google_fonts
 2.14
 file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/google_fonts-4.0.4/
@@ -114,6 +110,10 @@ meta
 2.12
 file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.8.0/
 file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.8.0/lib/
+nested
+2.12
+file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0/
+file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0/lib/
 octo_image
 2.12
 file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/octo_image-1.0.2/
@@ -162,6 +162,10 @@ process
 2.14
 file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/process-4.2.4/
 file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/process-4.2.4/lib/
+provider
+2.12
+file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.0.5/
+file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.0.5/lib/
 rxdart
 2.12
 file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/rxdart-0.27.7/

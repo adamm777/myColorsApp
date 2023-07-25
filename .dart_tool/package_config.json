@@ -128,12 +128,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "get",
-      "rootUri": "file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.5",
-      "packageUri": "lib/",
-      "languageVersion": "2.15"
-    },
-    {
       "name": "google_fonts",
       "rootUri": "file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/google_fonts-4.0.4",
       "packageUri": "lib/",
@@ -190,6 +184,12 @@
     {
       "name": "meta",
       "rootUri": "file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "nested",
+      "rootUri": "file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -264,6 +264,12 @@
       "rootUri": "file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/process-4.2.4",
       "packageUri": "lib/",
       "languageVersion": "2.14"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///C:/Users/adoum/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "rxdart",
@@ -368,7 +374,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-07-18T19:35:12.433471Z",
+  "generated": "2023-07-25T21:24:45.570925Z",
   "generator": "pub",
   "generatorVersion": "2.19.4"
 }

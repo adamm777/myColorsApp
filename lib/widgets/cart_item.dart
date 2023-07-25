@@ -1,18 +1,17 @@
-// ignore: must_be_immutable
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:district_flutter/pages/cart_page/controller/cart_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:provider/provider.dart';
+import '../pages/cart_page/controller/cart_controller.dart';
 
 class CartCard extends StatelessWidget {
   final CartItem cartItem;
-  final CartController controller = Get.find<CartController>();
 
-  CartCard({super.key, required this.cartItem});
+  CartCard({Key? key, required this.cartItem}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final cartController = Provider.of<CartController>(context);
+
     return InkWell(
       onTap: () {},
       child: Padding(
@@ -72,7 +71,7 @@ class CartCard extends StatelessWidget {
                             color: Colors.black,
                           ),
                           onPressed: () {
-                            controller.decrementQuantity(cartItem);
+                            cartController.decrementQuantity(cartItem);
                           },
                         ),
                         Text(
@@ -82,14 +81,14 @@ class CartCard extends StatelessWidget {
                         IconButton(
                           icon: const Icon(Icons.add, color: Colors.black),
                           onPressed: () {
-                            controller.incrementQuantity(cartItem);
+                            cartController.incrementQuantity(cartItem);
                           },
                         ),
                       ],
                     ),
                     InkWell(
                       onTap: () {
-                        controller.removeFromCart(cartItem);
+                        cartController.removeFromCart(cartItem);
                       },
                       child: const Text("Remove"),
                     )

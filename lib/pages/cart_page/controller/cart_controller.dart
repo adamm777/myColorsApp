@@ -1,8 +1,6 @@
-import 'package:district_flutter/model/product_model.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:district_flutter/model/product_model.dart';
 
 class CartItem {
   final ProductModel product;
@@ -11,10 +9,10 @@ class CartItem {
   CartItem({required this.product, required this.requestedQuantity});
 }
 
-class CartController extends GetxController {
+class CartController extends ChangeNotifier {
   final List<CartItem> cartItems = [];
-  var totalProducts = 0.obs;
-  var totalAmount = 0.0.obs;
+  var totalProducts = 0;
+  var totalAmount = 0.0;
 
   void addToCart(ProductModel product) {
     final existingCartItem = cartItems.firstWhere(
@@ -29,9 +27,9 @@ class CartController extends GetxController {
         existingCartItem.requestedQuantity++;
       }
       product.details.quantity--;
-      totalProducts.value++;
-      totalAmount.value += product.details.price;
-      update();
+      totalProducts++;
+      totalAmount += product.details.price;
+      notifyListeners();
       Fluttertoast.showToast(
         msg: "Product added to Cart",
         backgroundColor: Colors.green,
@@ -52,9 +50,9 @@ class CartController extends GetxController {
     if (cartItem.product.details.quantity > 0) {
       cartItem.requestedQuantity++;
       cartItem.product.details.quantity--;
-      totalProducts.value++;
-      totalAmount.value += cartItem.product.details.price;
-      update();
+      totalProducts++;
+      totalAmount += cartItem.product.details.price;
+      notifyListeners();
     } else {
       Fluttertoast.showToast(
         msg: "Not enough in stock",
@@ -69,19 +67,18 @@ class CartController extends GetxController {
     if (cartItem.requestedQuantity > 1) {
       cartItem.requestedQuantity--;
       cartItem.product.details.quantity++;
-      totalProducts.value--;
-      totalAmount.value -= cartItem.product.details.price;
-      update();
+      totalProducts--;
+      totalAmount -= cartItem.product.details.price;
+      notifyListeners();
     }
   }
 
   void removeFromCart(CartItem cartItem) {
     cartItems.remove(cartItem);
     cartItem.product.details.quantity += cartItem.requestedQuantity;
-    totalProducts.value -= cartItem.requestedQuantity;
-    totalAmount.value -=
-        cartItem.requestedQuantity * cartItem.product.details.price;
-    update();
+    totalProducts -= cartItem.requestedQuantity;
+    totalAmount -= cartItem.requestedQuantity * cartItem.product.details.price;
+    notifyListeners();
   }
 
   void clearCart() {
@@ -89,8 +86,8 @@ class CartController extends GetxController {
       cartItem.product.details.quantity += cartItem.requestedQuantity;
     }
     cartItems.clear();
-    totalProducts.value = 0;
-    totalAmount.value = 0.0;
-    update();
+    totalProducts = 0;
+    totalAmount = 0.0;
+    notifyListeners();
   }
 }

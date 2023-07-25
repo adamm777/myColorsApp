@@ -1,18 +1,17 @@
 import 'package:district_flutter/pages/cart_page/controller/cart_controller.dart';
 import 'package:district_flutter/widgets/cart_item.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<CartController>(
-      init: CartController(),
-      builder: (controller) {
+    return Consumer<CartController>(
+      builder: (context, controller, _) {
         return Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
@@ -20,7 +19,7 @@ class CartPage extends StatelessWidget {
             elevation: 0,
             leading: IconButton(
               onPressed: () {
-                Get.back();
+                Navigator.of(context).pop();
               },
               icon: const Icon(
                 Icons.arrow_back_ios_new,
@@ -117,38 +116,39 @@ class CartPage extends StatelessWidget {
               ],
             ),
           ),
-          bottomNavigationBar: controller.totalProducts != 0.obs
-              ? Container(
-                  height: 70,
-                  color: Colors.white,
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Text(
-                              'Check Out',
-                              style: GoogleFonts.poppins(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
+          bottomNavigationBar:
+              context.watch<CartController>().totalProducts != 0
+                  ? Container(
+                      height: 70,
+                      color: Colors.white,
+                      padding: const EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: InkWell(
+                              onTap: () {},
+                              child: Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                child: Text(
+                                  'Check Out',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  ),
-                )
-              : null,
+                    )
+                  : null,
         );
       },
     );
