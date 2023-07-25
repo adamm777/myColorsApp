@@ -1,12 +1,9 @@
-// ignore: must_be_immutable
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:district_flutter/model/product_model.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../pages/product_page/view/product_details.dart';
 
+// ignore: must_be_immutable
 class ProductCard extends StatelessWidget {
   ProductModel product;
   ProductCard({super.key, required this.product});
@@ -15,9 +12,11 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to(() => ProductDetailsPage(
-              product: product,
-            ));
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => ProductDetailsPage(product: product),
+          ),
+        );
       },
       child: Container(
         height: MediaQuery.of(context).size.height * 0.20,
